@@ -1,7 +1,9 @@
 ﻿cls
 
+# PS_Get-IP-FQDN-PingTest.ps1
+
 <# This script is used to Ping Test a Server node and get
-its FQDN and then outputs the results to a csv file. #>
+its FQDN and then output the results to a CSV file. #>
 
 
 $servers = Get-Content -Path "C:\PATH_TO_LOCATION\FILE_NAME.txt"
