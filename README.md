@@ -23,7 +23,7 @@ Where possible, I've tried to add the following to my scripts:
 I've tried to add Remarks in my code to make it a bit easier to follow,
 though this is usually an after thought when I've created my scripts. 
 
--Input\Output
+- Input\Output
 Most of my scripts are designed to carry a large workload, such as checking
 a thousand+ servers. As such I created my script to pull it's Input from a text file
 and to push it's output to a CSV file.
