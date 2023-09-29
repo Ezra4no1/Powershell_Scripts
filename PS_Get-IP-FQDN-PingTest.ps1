@@ -5,7 +5,6 @@
 <# This script is used to Ping Test a Server node and get
 its FQDN and then output the results to a CSV file. #>
 
-
 $servers = Get-Content -Path "C:\PATH_TO_LOCATION\FILE_NAME.txt"
 $results = @()
 
@@ -14,8 +13,6 @@ foreach ($server in $servers) {
     $fqdn = ""
     $ipAddress = ""
     $pingResponse = ""
-
- 
 
     # Get FQDN and IP address
     try {
@@ -26,8 +23,6 @@ foreach ($server in $servers) {
         $ipAddress = "Unknown"
     }
 
- 
-
     # Ping test
     $pingReply = Test-Connection -ComputerName $server -Count 1 -Quiet
     if ($pingReply) {
@@ -35,8 +30,6 @@ foreach ($server in $servers) {
     } else {
         $pingResponse = "Not Responded"
     }
-
- 
 
     # Create custom object with server details
     $serverDetails = [PSCustomObject]@{
@@ -47,14 +40,10 @@ foreach ($server in $servers) {
     }
     $results += $serverDetails
 
- 
-
     # Display countdown on the console
     $serversLeft = $servers.Count - $results.Count
     Write-Host "Servers left to check: $serversLeft"
 }
-
- 
 
 # Export results to CSV file
 $results | Export-Csv "C:\PATH_TO_LOCATION\FILE_NAME.csv" -NoTypeInformation
