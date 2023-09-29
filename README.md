@@ -9,7 +9,7 @@ I am not a coder!
 Over the years as I became heavily involved in the world of IT for my career, I found Powershell scripts made my life a lot easier. 
 I would spend hours searching the internet for other people's scripts to help make my work easier and better. 
 
-Oddly enough, the collective hours I spent searching online for other people's powershell scripts and trying to tweak them for my specific needs
+Oddly enough, the collective hours I spent searching online for other people's PowerShell scripts and trying to tweak them for my specific needs
 and uses, I could have just sat down and learned Powershell.
 
 This repository will serve as a small and tiny way for me to give back to the internet community for what they helped give to me.
@@ -17,11 +17,29 @@ This repository will serve as a small and tiny way for me to give back to the in
 --
 About my Powershell Scripts.
 ----------------------------
+
+--
+These scripts worked for me in my environment. 
+They may not work for you in your environment for many different reasons.
+If they don't run for you, I'll apologize now, but I won't be able to troubleshoot the problem.
+The best I can do is point you in the same direction I went through over the years - which is 
+Google and other online forums. At the very least you might be able to view my scripts and find
+other ways to modify them for your own use or create your own new scripts from the examples of my scripts.
+
+If you are going to use any of my scripts for your own purpose, 
+"USE AT YOUR OWN RISK!!"
+
+You will need some working knowledge of Powershell. 
+Depending on your environment you may need to have Admin access for the script to function.
+You may need to adjust your Windows Execution Policy to run the script or at least know how to work around it's security.
+You could bring down your entire infrastructure. You could start WWIII - unlikely, but who knows.
+
+--
 Where possible, I've tried to add the following to my scripts:
 
 - Remarks
 I've tried to add Remarks in my code to make it a bit easier to follow,
-though this is usually an after thought when I've created my scripts. 
+though this is usually an afterthought when I've created my scripts. 
 
 - Input\Output
 Most of my scripts are designed to carry a large workload, such as checking
