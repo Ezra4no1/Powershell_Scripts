@@ -1,6 +1,8 @@
 <# This script will check the Uptime, Last Reboot, and if there is a pending reboot waiting.
 It will ask if you want to check Local or Remote. #>
 
+CLS
+
 # Prompt user for checking local or remote computer
 $choice = Read-Host "Enter 'L' to check local computer or 'R' to check a remote computer"
 
