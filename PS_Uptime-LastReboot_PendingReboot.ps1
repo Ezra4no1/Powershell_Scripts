@@ -1,11 +1,14 @@
+CLS
+
 <# This script will check the Uptime, Last Reboot, and if there is a pending reboot waiting.
 It will ask if you want to check Local or Remote. #>
 
-CLS
+
 Write-Host " "
-Write-Host "============================================================================================================="
-Write-Host "This script checks the Uptime of a server, the date of last Reboot, and if there is a pending Reboot waiting."
-Write-Host "============================================================================================================="
+Write-Host "====================================================================="
+Write-Host "This script checks the Uptime of a server, the date of last Reboot,"
+Write-Host "if there is a pending Reboot waiting, and who initiated the last reboot."
+Write-Host "====================================================================="
 Write-Host " "
 
 do {
@@ -31,10 +34,28 @@ do {
             $pendingRebootMessage = "Pending Reboot: No"
         }
 
+        # Get last reboot initiator for local computer
+        $lastRebootInitiator = "Not Available"
+
+        $events = Get-WinEvent -FilterHashtable @{Logname='System';ID=1074} -MaxEvents 5 | Where-Object {$_.MachineName -eq $env:COMPUTERNAME} | Select-Object -ExpandProperty Message
+
+        foreach ($event in $events) {
+            $userStartIndex = $event.IndexOf('User:')
+            if ($userStartIndex -ne -1) {
+                $userEndIndex = $event.IndexOf(';', $userStartIndex)
+                if ($userEndIndex -ne -1) {
+                    $lastRebootInitiator = $event.Substring($userStartIndex + 5, $userEndIndex - $userStartIndex - 5).Trim()
+                    break
+                }
+            }
+        }
+        $lastRebootInitiatorMessage = "Last Reboot Initiator: $lastRebootInitiator"
+
         # Display information for local computer
         $uptimeMessage
         $lastRebootMessage
         $pendingRebootMessage
+        $lastRebootInitiatorMessage
     } elseif ($choice -eq 'R') {
         # Get the remote computer name from the user
         Write-Host "--------------------------------------"
@@ -58,10 +79,28 @@ do {
             $pendingRebootMessage = "Pending Reboot: No"
         }
 
+        # Get last reboot initiator for remote computer
+        $lastRebootInitiator = "Not Available"
+
+        $events = Get-WinEvent -FilterHashtable @{Logname='System';ID=1074} -ComputerName $remoteComputer -MaxEvents 5 | Where-Object {$_.MachineName -eq $remoteComputer} | Select-Object -ExpandProperty Message
+
+        foreach ($event in $events) {
+            $userStartIndex = $event.IndexOf('User:')
+            if ($userStartIndex -ne -1) {
+                $userEndIndex = $event.IndexOf(';', $userStartIndex)
+                if ($userEndIndex -ne -1) {
+                    $lastRebootInitiator = $event.Substring($userStartIndex + 5, $userEndIndex - $userStartIndex - 5).Trim()
+                    break
+                }
+            }
+        }
+        $lastRebootInitiatorMessage = "Last Reboot Initiator: $lastRebootInitiator"
+
         # Display information for remote computer
         $uptimeMessage
         $lastRebootMessage
         $pendingRebootMessage
+        $lastRebootInitiatorMessage
     } else {
         Write-Host "Invalid choice. Please enter 'L' for local or 'R' for remote."
     }
