@@ -1,8 +1,10 @@
 cls
-<#Script will check AD if Object is a UserAcc, Group, or other
+<#
+Script will check AD if Object is a UserAcc, Group, or other
 Script uses Text for for input and Outputs to a CSV file
 CSV file will list Name (ObjectName) ObjectType ( User, Group, Computer)
-and DistnguishedName (AD Location of Object)#> 
+and DistnguishedName (AD Location of Object)
+#> 
 
 
 # Import the Active Directory module
