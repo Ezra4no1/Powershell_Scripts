@@ -1,6 +1,17 @@
 # Powershell_Scripts
 A dump of different Powershell Scripts I have used for work and personal use.
 -----------------------------------------------------------------------------
+02/21/2025
+All Powershell scripts were designed to run on Powershell ISE, 5.x
+While working with thousands of servers in my employment all with different flavors of Windows Server OSes,
+I found the default version of Powershell that came with Windows 2008R2 and above would need to work with my
+my scripts when a new version of Powershell wasn't installed on the server - hence 5.x and ISE.
+
+When possible, I will use my Powershell session credentials to run a Powershell script during my employment.
+Since most of my work was from an Admin workstation, using elevated privileges, it was just easier for me to
+use the session credentials than having to be prompted from Powershell to manually enter my credentials. As such 
+my scripts are written with this in mind. Times when I needed a script to test service accounts, that script was
+written to prompt the user to enter this information.
 
 09/29/2023
 This Readme file is a work in progress.
@@ -31,7 +42,7 @@ If you are going to use any of my scripts for your own purpose,
 
 You will need some working knowledge of Powershell. 
 Depending on your environment you may need to have Admin access for the script to function.
-You may need to adjust your Windows Execution Policy to run the script or at least know how to work around it's security.
+You may need to adjust your Windows Execution Policy to run the script or at least know how to work around its security.
 You could bring down your entire infrastructure. You could start WWIII - unlikely, but who knows.
 
 --
@@ -39,12 +50,12 @@ Where possible, I've tried to add the following to my scripts:
 
 - Remarks
 I've tried to add Remarks in my code to make it a bit easier to follow,
-though this is usually an afterthought when I've created my scripts. 
+However, this is usually an afterthought when I create my scripts. 
 
 - Input\Output
 Most of my scripts are designed to carry a large workload, such as checking
-a thousand+ servers. As such I created my script to pull it's Input from a text file
-and to push it's output to a CSV file.
+a thousand+ servers. As such I created my script to pull its Input from a text file
+and to push its output to a CSV file.
 
 - Visual Countdown\Progress of script
 I began adding some kind of countdown or progress bar to my scripts to display
