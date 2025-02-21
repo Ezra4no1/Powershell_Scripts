@@ -7,6 +7,12 @@ While working with thousands of servers in my employment all with different flav
 I found the default version of Powershell that came with Windows 2008R2 and above would need to work with my
 my scripts when a new version of Powershell wasn't installed on the server - hence 5.x and ISE.
 
+When possible, I will use my Powershell session credentials to run a Powershell script during my employment.
+Since most of my work was from an Admin workstation, using elevated privileges, it was just easier for me to
+use the session credentials than having to be prompted from Powershell to manually enter my credentials. As such 
+my scripts are written with this in mind. Times when I needed a script to test service accounts, that script was
+written to prompt the user to enter this information.
+
 09/29/2023
 This Readme file is a work in progress.
 
