@@ -1,15 +1,22 @@
 # Powershell_Scripts
 A dump of different Powershell Scripts I have used for work and personal use.
 -----------------------------------------------------------------------------
-02/21/2025
-All Powershell scripts were designed to run on Powershell ISE, 5.x
-While working with thousands of servers in my employment all with different flavors of Windows Server OSes,
-I found the default version of Powershell that came with Windows 2008R2 and above would need to work with my
-my scripts when a new version of Powershell wasn't installed on the server - hence 5.x and ISE.
+**10/26/2026**
+This is an old repository of PowerShell scripts I have used in the past.
+Currently, I am no longer updating any of these scripts, but they are kept here for anyone to use
+and to learn from, since it's common for new PowerShell users to view existing PowerShell scripts
+to learn and modify for their own uses and needs.
 
-When possible, I will use my Powershell session credentials to run a Powershell script during my employment.
+-----------------------------------------------------------------------------
+02/21/2025
+All PowerShell scripts were designed to run on PowerShell ISE 5.x
+While working with thousands of servers in my employment, all with different flavors of Windows Server OSes,
+I found the default version of PowerShell that came with Windows 2008R2 and above would need to work with my
+my scripts when a new version of PowerShell wasn't installed on the server - hence 5.x and ISE.
+
+When possible, I will use my PowerShell session credentials to run a PowerShell script during my employment.
 Since most of my work was from an Admin workstation, using elevated privileges, it was just easier for me to
-use the session credentials than having to be prompted from Powershell to manually enter my credentials. As such 
+use the session credentials than having to be prompted by PowerShell to manually enter my credentials. As such 
 my scripts are written with this in mind. Times when I needed a script to test service accounts, that script was
 written to prompt the user to enter this information.
 
@@ -21,7 +28,7 @@ Over the years as I became heavily involved in the world of IT for my career, I 
 I would spend hours searching the internet for other people's scripts to help make my work easier and better. 
 
 Oddly enough, the collective hours I spent searching online for other people's PowerShell scripts and trying to tweak them for my specific needs
-and uses, I could have just sat down and learned Powershell.
+and uses, I could have just sat down and learned PowerShell.
 
 This repository will serve as a small and tiny way for me to give back to the internet community for what they helped give to me.
 -----------------------------------------------------------------------------
@@ -34,14 +41,14 @@ These scripts worked for me in my environment.
 They may not work for you in your environment for many different reasons.
 If they don't run for you, I'll apologize now, but I won't be able to troubleshoot the problem.
 The best I can do is point you in the same direction I went through over the years - which is 
-Google and other online forums. At the very least you might be able to view my scripts and find
+Google and other online forums. At the very least, you might be able to view my scripts and find
 other ways to modify them for your own use or create your own new scripts from the examples of my scripts.
 
 If you are going to use any of my scripts for your own purpose, 
 "USE AT YOUR OWN RISK!!"
 
-You will need some working knowledge of Powershell. 
-Depending on your environment you may need to have Admin access for the script to function.
+You will need some working knowledge of PowerShell. 
+Depending on your environment, you may need to have Admin access for the script to function.
 You may need to adjust your Windows Execution Policy to run the script or at least know how to work around its security.
 You could bring down your entire infrastructure. You could start WWIII - unlikely, but who knows.
 
@@ -54,7 +61,7 @@ However, this is usually an afterthought when I create my scripts.
 
 - Input\Output
 Most of my scripts are designed to carry a large workload, such as checking
-a thousand+ servers. As such I created my script to pull its Input from a text file
+a thousand+ servers. As such, I created my script to pull its Input from a text file
 and to push its output to a CSV file.
 
 - Visual Countdown\Progress of script
